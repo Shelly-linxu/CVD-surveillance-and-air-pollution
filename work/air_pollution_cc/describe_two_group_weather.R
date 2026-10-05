@@ -1,0 +1,4 @@
+suppressPackageStartupMessages(library(data.table))
+p<-'work/air_pollution_cc/private';o<-'outputs/air_pollution_cc/two_group';s<-readRDS(file.path(p,'two_group/registry_model_rows.rds'));x<-unique(s$data[,.(study_group,location_id,date,weather_grid_id)])
+w<-as.data.table(read.csv(gzfile(file.path(p,'weather_basis_main.csv.gz'))));w[,date:=as.IDate(date)];z<-merge(x,w[,.(date,weather_grid_id,temp,rh_ma03)],by=c('date','weather_grid_id'),all.x=TRUE)
+r<-rbindlist(lapply(c('temp','rh_ma03'),function(v)z[,.(variable=v,n=.N,missing=sum(is.na(get(v))),mean=mean(get(v),na.rm=TRUE),SD=sd(get(v),na.rm=TRUE),median=median(get(v),na.rm=TRUE),p25=quantile(get(v),.25,na.rm=TRUE),p75=quantile(get(v),.75,na.rm=TRUE)),by=study_group]));r[,scope:='unique matched location-date, not independent weather observations'];fwrite(r,file.path(o,'表2_两类疾病匹配日期气象分布.csv'),bom=TRUE)

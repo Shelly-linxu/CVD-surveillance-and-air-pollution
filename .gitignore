@@ -1,0 +1,30 @@
+# Deny all files by default, then allow source/documentation only.
+*
+!*/
+!*.py
+!*.R
+!*.cjs
+!*.md
+!requirements.txt
+!package.json
+!package-lock.json
+!.gitignore
+!config/sources.example.json
+!config/model_parameters.example.json
+# Sensitive inputs and all generated products remain ignored.
+原始数据/
+data/
+outputs/
+work/air_pollution_cc/private/
+work/air_pollution_cc/chap_archives/
+work/air_pollution_cc/chap_guangzhou_buffer/
+work/air_pollution_cc/weather_era5/
+config/*.local.json
+.env*
+*.pem
+*.key
+**/*key*.json
+**/id_salt.bin
+**/node_modules/
+**/__pycache__/
+**/.venv/

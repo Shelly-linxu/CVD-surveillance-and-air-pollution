@@ -1,0 +1,7 @@
+{
+  "name": "guangzhou-air-pollution-coordinates",
+  "private": true,
+  "dependencies": {
+    "gcoord": "1.0.7"
+  }
+}

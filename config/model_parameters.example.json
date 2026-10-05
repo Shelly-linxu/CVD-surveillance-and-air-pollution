@@ -1,0 +1,21 @@
+{
+  "pollutant_increment_ug_m3": 10,
+  "reference_window": "lag01",
+  "pollution_lag_max": 7,
+  "temperature_lag_max": [
+    21,
+    14,
+    28
+  ],
+  "humidity_window": "lag03",
+  "warm_months": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "geocoding_external_requests": "disabled_until_data_custodian_authorization",
+  "components_analysis": "not_implemented_without_verified_daily_year_coverage"
+}

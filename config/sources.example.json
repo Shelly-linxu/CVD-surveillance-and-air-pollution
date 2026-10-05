@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "year": 2023,
+      "filename": "surveillance_2023.xlsx",
+      "sheet": "Sheet1"
+    },
+    {
+      "year": 2024,
+      "filename": "surveillance_2024.xlsx",
+      "sheet": "Sheet1"
+    },
+    {
+      "year": 2025,
+      "filename": "surveillance_2025.xlsx",
+      "sheet": "Sheet1"
+    }
+  ]
+}
